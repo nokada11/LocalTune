@@ -1,7 +1,9 @@
 from spot import *
 from flask import Flask, request, render_template, send_from_directory
 import json
+from pprint import pprint
 app = Flask(__name__, template_folder='www', static_url_path='/www')
+import sys
 
 global pls
 pls = []
@@ -29,6 +31,26 @@ def search():
 def root():
     return render_template('index.html')
 
+@app.route("/record")
+def record():
+    return render_template('record.html')
+
+@app.route("/musicin", methods = ['POST'])
+def musicin():
+    # print("hello")
+    print(sys.getsizeof(request))
+    music_data = list(request.__dict__)
+
+    print(request.__dict__)
+    for a in music_data:
+        print (a)
+    # print(request.files['file'].filename)
+    pprint(music_data)
+    # print("Saurav")
+    # music_data.save(secure_filename(music_data.filename))
+    # print("sup")
+    return "hi"
+
 @app.route("/playlists", methods = ['GET'])
 def playlists():
     global pls
@@ -39,3 +61,8 @@ def playlists():
     return json.dumps(pl_names)
 
 app.run()
+
+
+
+
+

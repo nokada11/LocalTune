@@ -611,11 +611,10 @@ def splicename(uri):
 
 #https://open.spotify.com/artist/3lv9GfkVw9I9X4Rgtf2o4r
 
-<<<<<<< HEAD
+
 s = Spot("lawrencethejumbo", clientid='c4e820584f754d1ba3ea2e75b44f041b', clientsecret='1587cc7d379c4486bf89a6c1b1519da5', redirect='https://example.com/callback/')
-=======
+
 # s = Spot("lawrencethejumbo", clientid='c4e820584f754d1ba3ea2e75b44f041b', clientsecret='1587cc7d379c4486bf89a6c1b1519da5', redirect='https://example.com/callback/')
->>>>>>> 6d29d75eb7165a098ccf7b4d9cc07ea16fd9e5a3
 #s.my_playlists()
 #sb = s.sb
 
