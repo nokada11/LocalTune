@@ -246,7 +246,7 @@ class Spot():
         
         #self.token = util.prompt_for_user_token(self.username, self.scope,client_id='abdd03cd5c1c4dc79d15cbf50b0641ad', client_secret='5b1d951d01464ccea685a5fc35977d33', redirect_uri='https://example.com/callback/')
         #self.sp = spotipy.Spotify(auth=self.token)
-        self.sb = spotback.SpotBack(clientid='abdd03cd5c1c4dc79d15cbf50b0641ad', clientsecret='5b1d951d01464ccea685a5fc35977d33', redirect='https://example.com/callback/')
+        self.sb = spotback.SpotBack(clientid=clientid, clientsecret=clientsecret, redirect='https://example.com/callback/')
         self.info = {}
 
     def __str__(self):
@@ -611,7 +611,11 @@ def splicename(uri):
 
 #https://open.spotify.com/artist/3lv9GfkVw9I9X4Rgtf2o4r
 
+<<<<<<< HEAD
 s = Spot("lawrencethejumbo", clientid='c4e820584f754d1ba3ea2e75b44f041b', clientsecret='1587cc7d379c4486bf89a6c1b1519da5', redirect='https://example.com/callback/')
+=======
+# s = Spot("lawrencethejumbo", clientid='c4e820584f754d1ba3ea2e75b44f041b', clientsecret='1587cc7d379c4486bf89a6c1b1519da5', redirect='https://example.com/callback/')
+>>>>>>> 6d29d75eb7165a098ccf7b4d9cc07ea16fd9e5a3
 #s.my_playlists()
 #sb = s.sb
 
@@ -620,9 +624,9 @@ s = Spot("lawrencethejumbo", clientid='c4e820584f754d1ba3ea2e75b44f041b', client
 #pl = s.get_categories()
 #pl = s.get_category_playlists(category_id='gaming')
 
-p = s.search(query='17 Youth Lagoon',type='track')
+# p = s.search(query='17 Youth Lagoon',type='track')
 
-song = Song(p[0][2], s.sb, p[0][1])
+# song = Song(p[0][2], s.sb, p[0][1])
 #artist = s.get_artist("3TVXtAsR1Inumwj472S9r4")
 
 # song = s.get_track('2gfBV96ou2PCp0VhvddOVQ')
