@@ -153,7 +153,7 @@ class Playlist():
 def create_playlist(user_id, playlist_id, s, playlist_name):
 
     if type(playlist_id) == type(None):
-        return s.create_playlist(user_id, playlist_name)
+        return s.sb.create_playlist(user_id, playlist_name)
         
     else:
         return playlist_id

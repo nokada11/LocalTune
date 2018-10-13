@@ -1,0 +1,45 @@
+  <html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  #map {
+	height: 100%;
+}
+
+/*html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+*/}
+</style>
+  <meta charset="UTF-8"> 
+  <script async defer src = "https://maps.google.com/maps/api/js?callback=init&key=AIzaSyBq44ON-e8FrlpS3iB6ZRYNTEJDClqMqF4"></script>
+  <script>
+  	 var maps	
+  	 function init(){
+ 		maps = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 42.4062336, lng: -71.1166001},
+          zoom: 15
+        });
+        navigate();
+ 	}
+
+ 	function navigate()
+    {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position){
+                loc = {lat: position.coords.latitude, lng: position.coords.longitude};
+                maps.panTo(loc);
+            });
+        }
+        else
+        {
+            alert("Sorry! Your browser doesn't support geolocation");
+        }
+    }
+</script>
+</head>
+<body>
+	<div id = 'map'></div>
+</body>
+</html>

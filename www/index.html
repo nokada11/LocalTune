@@ -2,14 +2,55 @@
 <html>
 <head>
 	<script src = "script.js"></script>
-	<script async defer src = "https://maps.google.com/maps/api/js?callback=init&libraries=geometry"></script>
+	<script src = "recorder_plugin.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_QgOm8MDG1GBgyTRkI3hpzFW2cdH4nWI&callback=init"
+   async defer></script>
+	<style>
+
+		#map {
+			height: 81%;
+		}
+		#playlists{min-width:200px;}
+		#bt{display:inline;}
+		input, button{
+			border-radius:4px;
+			border-width:0px;
+		}
+		.top img{float:left; height: 85px; width: auto;}
+		.bt{background-color:black; color: white;}
+		div.banner{
+			text-align:center;
+			background-color:#EDEDED;
+		}
+		html, body {
+			background-color:#EDEDED;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
 </head>
 <body>
-	<select id = "playlists"></select>
-	<input type = "text" name="song_text" id = "song_text"><br>
-	<input type = "button" name = "search" onclick="search()" value = "Search">
-	<input type = "button" name = "add" onclick="add()" value = "Add">
-	<div id = 'map'></div>
+	<div class="top">
+		<img src="logo.png">
+	<div class="banner">
+		<select id = "playlists"><option>Choose Playlist..</option></select>
+		<input list = "searchables" type = "text" name="song_text" id = "song_text" onkeypress = "search()">
+		<datalist id = "searchables">
+		</datalist>
+		<input type = "button" name = "add" onclick="add()" value = "Add Tracks" class="bt"></br></br>
+	</div>
+	<div class="banner">
+		<input type = "text" name = "playlist_name" id = "playlist_name">
+		<input type = "button" name="new_playlist" onclick="new_playlist()" value = "Add New Playlist" class="bt">
+		</br></br>
+	</div>
+	<div class="banner">
+		<button onclick="startRecording(this);">record</button>
+		<button onclick="stopRecording(this);" name="aaa" disabled>stop</button>
+
+	</div></div>
+	<div id = "map"></div>
 	<div id = "output"></div>
 </body>
 </html>
