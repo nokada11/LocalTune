@@ -2,13 +2,14 @@
 <html>
 <head>
 	<script src = "script.js"></script>
+	<script async defer src = "https://maps.google.com/maps/api/js?callback=init&libraries=geometry"></script>
 </head>
-<body onload = "init()">
+<body>
 	<select id = "playlists"></select>
 	<input type = "text" name="song_text" id = "song_text"><br>
 	<input type = "button" name = "search" onclick="search()" value = "Search">
 	<input type = "button" name = "add" onclick="add()" value = "Add">
-
+	<div id = 'map'></div>
 	<div id = "output"></div>
 </body>
 </html>

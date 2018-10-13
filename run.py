@@ -1,6 +1,7 @@
 from spot import *
 from flask import Flask, request, render_template, send_from_directory
 import json
+
 app = Flask(__name__, template_folder='www', static_url_path='/www')
 
 global pls

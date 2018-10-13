@@ -1,3 +1,5 @@
+var maps, loc, infowindow, me;
+
 function init() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -13,6 +15,27 @@ function init() {
     }
     xhr.open("GET", "/playlists", true);
     xhr.send()
+    maps = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 42.4062336, lng: -71.1166001},
+      zoom: 15
+    });
+    navigate()
+}
+
+
+function navigate()
+{
+    if (navigator.geolocation)
+    {
+        navigator.geolocation.getCurrentPosition(function(position){
+            loc = {lat: position.coords.latitude, lng: position.coords.longitude};
+            maps.panTo(loc);
+        });
+    }
+    else
+    {
+        alert("Sorry! Your browser doesn't support geolocation");
+    }
 }
 
 
