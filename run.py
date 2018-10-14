@@ -7,18 +7,13 @@ from acrcloud.recognizer import ACRCloudRecognizer
 client = MongoClient('localhost', 27017)
 db = client.polyhack
 coll = db.locations
-config = {
-    'host':'identify-us-west-2.acrcloud.com',
-    'access_key':'fc26be1fba67e9d5af5b6b532d066686', 
-    'access_secret':'crgpQPzgeR2VoFZiiEnOW6gTaIvZw3PRLpHn6if9',
-    'timeout':10
-}
+config = { }
 
 re = ACRCloudRecognizer(config)
 
 app = Flask(__name__, template_folder='www', static_url_path='/www')
 
-s = Spot("lawrencethejumbo", clientid='c4e820584f754d1ba3ea2e75b44f041b', clientsecret='1587cc7d379c4486bf89a6c1b1519da5', redirect='https://example.com/callback/')
+s = Spot("", clientid='', clientsecret='', redirect='https://example.com/callback/')
 
 @app.route('/<path:path>')
 def send_js(path):
