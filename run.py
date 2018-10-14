@@ -19,6 +19,7 @@ re = ACRCloudRecognizer(config)
 app = Flask(__name__, template_folder='www', static_url_path='/www')
 
 s = Spot("lawrencethejumbo", clientid='c4e820584f754d1ba3ea2e75b44f041b', clientsecret='1587cc7d379c4486bf89a6c1b1519da5', redirect='https://example.com/callback/')
+
 @app.route('/<path:path>')
 def send_js(path):
     return send_from_directory('www', path)
@@ -77,4 +78,4 @@ def musicin():
     print(music_data)
     return (re.recognize_by_filebuffer(music_data, 0))
 
-app.run(port=80)
+app.run()
